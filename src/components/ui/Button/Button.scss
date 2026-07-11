@@ -75,5 +75,9 @@
   &--icon {
     padding: $button-padding-icon;
     text-transform: none;
+
+    @include media(mobile) {
+      font-size: 14px;
+    }
   }
 }
