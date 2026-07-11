@@ -4,6 +4,8 @@ import { MODAL_TYPES } from "../../constants/modalTypes.js";
 import { RulesModal } from "./RulesModal.jsx";
 import { DeletePlayerModal } from "./DeletePlayerModal.jsx";
 import { NewGameModal } from "./NewGameModal.jsx";
+import { AddWordWarningModal } from "./AddWordWarningModal.jsx";
+import { ChoosePlayerWarningModal } from "./ChoosePlayerWarningModal.jsx";
 
 export function ModalRenderer() {
   const { closeModal, activeModal, playerToDelete } = useContext(ModalContext);
@@ -19,10 +21,10 @@ export function ModalRenderer() {
         <DeletePlayerModal closeModal={closeModal} id={playerToDelete} />
       )}
       {activeModal === MODAL_TYPES.CHOOSE_PLAYER_WARNING && (
-        <ChoosePlayerWarningModal closeModal={closeModal}/>
+        <ChoosePlayerWarningModal closeModal={closeModal} />
       )}
       {activeModal === MODAL_TYPES.ADD_WORD_WARNING && (
-        <AddWordWarningModal closeModal={closeModal}/>
+        <AddWordWarningModal closeModal={closeModal} />
       )}
     </>
   );
