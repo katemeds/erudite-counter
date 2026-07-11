@@ -1,0 +1,33 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.player {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 3fr 2fr 0.5fr;
+  background-color: var(--card-bg);
+  padding: $space-1;
+  cursor: pointer;
+  color: var(--card-text);
+  border-radius: $radius-lg;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+
+  &--active {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+  }
+
+  &__name {
+    text-transform: capitalize;
+  }
+
+  &__score {
+    width: $space-5;
+    @include flex($justify: space-between);
+    @include media(laptop) {
+      width: 50px;
+    }
+  }
+}

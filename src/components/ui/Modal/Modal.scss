@@ -1,0 +1,84 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.modal {
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow: auto;
+  }
+
+  &-content {
+    @include flex($direction: column, $gap: 20px, $align: start);
+    max-width: 400px;
+    margin: $space-5 auto;
+    background-color: var(--modal-bg);
+    color: var(--modal-text);
+    padding: $space-4 $space-2 $space-2 $space-2;
+    position: relative;
+    font-size: $font-sm;
+    border-radius: $radius-sm;
+
+    @include media(mobile) {
+      font-size: 12px;
+      max-width: 300px;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    top: $space-1;
+    right: $space-1;
+    width: 30px;
+    height: 30px;
+  }
+
+  &-text {
+    margin-bottom: $space-1;
+  }
+
+  &-options {
+    @include flex($gap: $space-1);
+  }
+
+  &-proceed {
+    border: 1px solid var(--color-red);
+  }
+}
+
+.rules {
+  @include flex($direction: column, $gap: 10px, $align: start);
+  &__list {
+    list-style: decimal;
+    padding-left: 15px;
+  }
+
+  &__sublist {
+    padding-left: 20px;
+    margin-top: 6px;
+    margin-bottom: 3px;
+  }
+
+  &__subitem {
+    position: relative;
+
+    &::before {
+      content: "-";
+      position: absolute;
+      left: -16px;
+    }
+  }
+
+  & span {
+    font-weight: 600;
+  }
+
+  & div:last-child {
+    text-align: right;
+  }
+}

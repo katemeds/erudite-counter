@@ -1,0 +1,13 @@
+@use "../../../styles/mixins" as *;
+
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+.footer__inner {
+  padding: 50px 0;
+  @include flex($justify: flex-end);
+}

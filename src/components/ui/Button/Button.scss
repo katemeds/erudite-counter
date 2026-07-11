@@ -1,0 +1,79 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &--primary {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+  }
+
+  &--neutral {
+    background-color: var(--button-neutral-bg);
+    color: var(--button-neutral-text);
+  }
+
+  &--danger {
+    background: transparent;
+    color: var(--color-red);
+  }
+
+  &--ghost {
+    background: transparent;
+    color: inherit;
+  }
+
+  &--md {
+    height: $button-height-md;
+    padding: $button-padding-md;
+    font-size: $button-font-md;
+    border-radius: $radius-lg;
+
+    @include media(desktop) {
+      font-size: 14px;
+      height: 45px;
+    }
+    @include media(laptop) {
+      height: 40px;
+    }
+    @include media(mobile) {
+      font-size: 12px;
+      padding: 0 8px;
+    }
+  }
+
+  &--sm {
+    height: $button-height-sm;
+    padding: $button-padding-sm;
+    font-size: $button-font-sm;
+    border-radius: $radius-lg;
+
+    @include media(desktop) {
+      font-size: 14px;
+    }
+
+    @include media(mobile) {
+      font-size: 12px;
+    }
+  }
+
+  &--icon {
+    padding: $button-padding-icon;
+    text-transform: none;
+  }
+}

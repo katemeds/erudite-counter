@@ -1,0 +1,10 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.game-wrapper {
+  @include flex($justify: space-between, $gap: $space-3, $align: start);
+  width: 100%;
+  @include media(laptop) {
+    flex-direction: column-reverse;
+  }
+}

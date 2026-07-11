@@ -1,0 +1,57 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.cell {
+  caret-color: transparent;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-align: center;
+  border: 0.1px solid var(--input-outline);
+  padding: 0;
+  font-size: 32px;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  transition: background-color var(--transition),
+    color var(--transition),
+    border var(--transition);
+
+  &:first-child {
+    border-top-left-radius: $radius-sm;
+  }
+
+  &:nth-child(5) {
+    border-top-right-radius: $radius-sm;
+  }
+
+  &:nth-child(11) {
+    border-bottom-left-radius: $radius-sm;
+  }
+
+  &:last-child {
+    border-bottom-right-radius: $radius-sm;
+  }
+
+  &:focus {
+    border: 2px solid var(--input-focus);
+    border-radius: none;
+    outline: none;
+    transition: none;
+  }
+
+  &::selection {
+    background-color: transparent;
+  }
+
+  &--green {
+    background-color: var(--color-green);
+  }
+  &--yellow {
+    background-color: var(--color-yellow);
+  }
+  &--grey {
+    background-color: var(--color-light-grey);
+  }
+}

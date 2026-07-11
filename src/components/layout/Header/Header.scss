@@ -1,0 +1,24 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.header {
+  padding-top: $space-2;
+  &__container {
+    @include flex($gap: $space-1);
+    @include media(mobile) {
+      gap: 5px;
+    }
+  }
+  &__button {
+    min-width: 160px;
+    @include media(desktop) {
+     min-width: 145px;
+    }
+    @include media(tablet) {
+      min-width: 130px;
+    }
+    @include media(mobile) {
+      min-width: 110px;
+    }
+  }
+}

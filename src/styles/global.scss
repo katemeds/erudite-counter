@@ -1,0 +1,148 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+:root {
+  --color-blue: #6080ff;
+  --color-red: #ff753a;
+  --color-green: #77e287;
+  --color-yellow: #fff240;
+  --color-black: #0d1117;
+  --color-light-grey: #f5faff;
+  --color-grey: #cedae2;
+  --color-white: #fff;
+  --color-dark-grey: #282a2c;
+  --color-medium-grey: #5e6369;
+
+  --page-bg: var(--color-white);
+  --page-text: var(--color-black);
+
+  --card-bg: var(--color-light-grey);
+  --card-text: var(--color-black);
+
+  --input-bg: var(--color-white);
+  --input-outline: var(--color-grey);
+  --input-text: var(--color-black);
+  --input-focus: var(--color-blue);
+  --input-placeholder: var(--color-grey);
+
+  --button-neutral-bg: var(--color-black);
+  --button-neutral-text: var(--color-white);
+
+  --bonus-outline: var(--color-black);
+
+  --transition: 0.3s ease;
+
+  --modal-bg: var(--color-white);
+  --modal-text: var(--color-black);
+
+  --theme-toggler-bg: var(--color-grey);
+  --theme-toggler-thumb: var(--color-light-grey);
+  --theme-toggler-icon: var(--color-white);
+
+  --tooltip-bg: var(--color-light-grey);
+  --tooltip-text: var(--color-blue);
+
+  --footer-bg: var(--color-light-grey);
+  --footer-text: var(--color-black)
+
+}
+
+body {
+  font-size: 18px;
+  @include media(laptop) {
+    font-size: 16px;
+  }
+  color: var(--page-text);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  background-color: var(--page-bg);
+
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+body[data-theme="dark"] {
+  --page-text: var(--color-white);
+  --page-bg: var(--color-black);
+
+  --card-bg: var(--color-dark-grey);
+  --card-text: var(--color-white);
+
+  --input-bg: var(--color-dark-grey);
+  --input-text: var(--color-white);
+  --input-focus: var(--color-blue);
+  --input-outline: var(--color-black);
+
+  --button-neutral-bg: var(--color-grey);
+  --button-neutral-text: var(--color-black);
+
+  --bonus-outline: var(--color-white);
+
+  --modal-bg: var(--color-dark-grey);
+  --modal-text: var(--color-light-grey);
+
+  --input-placeholder: var(--color-medium-grey);
+
+  --theme-toggler-bg: var(--color-dark-grey);
+  --theme-toggler-thumb: var(--color-black);
+  --theme-toggler-icon: var(--color-medium-grey);
+
+  --tooltip-bg: var(--color-dark-grey);
+  --tooltip-text: var(--color-medium-grey);
+
+  --footer-bg: var(--color-dark-grey);
+  --footer-text: var(--color-white)
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+input {
+  font-family: inherit;
+  color: inherit;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+  padding-top: $space-5;
+  @include media(laptop) {
+    padding-top: $space-4;
+  }
+  @include media(tablet) {
+    padding-top: $space-3;
+  }
+}
+
+.container {
+  max-width: 1220px;
+  @include media(desktop) {
+    max-width: 1020px;
+  }
+  @include media(laptop) {
+    max-width: 580px;
+  }
+  @include media(tablet) {
+    max-width: 500px;
+  }
+  @include media(mobile) {
+    max-width: 320px;
+  }
+  margin: 0 auto;
+  padding: 0 10px;
+}

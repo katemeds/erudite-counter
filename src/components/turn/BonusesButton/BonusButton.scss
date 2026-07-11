@@ -1,0 +1,65 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.bonus-btn {
+  width: 50px;
+  height: 50px;
+  @include media(desktop) {
+    width: 40px;
+    height: 40px;
+  }
+  @include media(tablet) {
+    width: 30px;
+    height: 30px;
+  }
+  @include media(mobile) {
+    width: 40px;
+    height: 40px;
+  }
+  border: none;
+  cursor: pointer;
+  border-radius: $radius-sm;
+
+  &--green {
+    background: var(--color-green);
+  }
+
+  &--red {
+    background: var(--color-red);
+  }
+
+  &--yellow {
+    background: var(--color-yellow);
+  }
+
+  &--blue {
+    background: var(--color-blue);
+  }
+  &--grey {
+    background: var(--color-grey);
+  }
+
+  &--active {
+    outline: 2px solid var(--bonus-outline);
+    outline-offset: -1px;
+  }
+
+  &--all-chars {
+    border: 1px solid var(--color-blue);
+    text-transform: uppercase;
+    font-size: 16px;
+    width: 120px;
+    font-size: $font-sm;
+    background-color: transparent;
+    @include media(desktop) {
+      width: 100px;
+      font-size: 12px;
+    }
+    @include media(tablet) {
+      width: 90px;
+    }
+    @include media(mobile) {
+      width: 100px;
+    }
+  }
+}

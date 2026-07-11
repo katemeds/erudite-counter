@@ -1,0 +1,9 @@
+@use "../../../styles/mixins" as *;
+
+.tippy-box[data-theme~="game"] {
+  font-size: 14px;
+  @include media(laptop) {
+    font-size: 12px;
+    max-width: 250px !important;
+  }
+}

@@ -1,0 +1,24 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.word-list {
+  @include flex($justify: space-between, $gap: 10px 30px);
+  font-size: $font-sm;
+  @include media(mobile) {
+    font-size: 12px;
+  }
+  flex-wrap: wrap;
+  padding: 0 $space-1;
+  border-top: 1px solid var(--color-blue);
+  border-bottom: 1px solid var(--color-blue);
+  margin: 0 $space-1;
+
+  &__item {
+    @include flex($gap: 5px);
+    line-height: 0.5;
+  }
+
+  & span {
+    padding: 10px 0;
+  }
+}

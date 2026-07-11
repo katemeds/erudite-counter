@@ -1,0 +1,70 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.players {
+  @include flex($direction: column, $align: stretch, $gap: $space-3);
+  width: 100%;
+  max-width: 400px;
+  @include media(desktop) {
+    gap: 20px;
+    max-width: 350px;
+  }
+
+  @include media(laptop) {
+    max-width: 330px;
+    flex-direction: column-reverse;
+  }
+  @include media(tablet) {
+    max-width: 100%;
+  }
+
+  &__form {
+    @include flex($justify: space-between, $gap: $space-1);
+  }
+
+  &__input {
+    font-size: $font-lg;
+    text-transform: uppercase;
+    border: 1px solid var(--input-outline);
+    height: $space-4;
+    padding: 0 $space-1;
+    flex: 1;
+    min-width: 0;
+    border-radius: $radius-lg;
+    background-color: var(--input-bg);
+    transition:
+      background-color var(--transition),
+      color var(--transition),
+      border var(--transition);
+
+    &::placeholder {
+      color: var(--input-placeholder);
+      transition: color var(--transition);
+    }
+
+    &:focus {
+      outline: 2px solid var(--input-focus);
+      outline-offset: -1px;
+    }
+
+    @include media(desktop) {
+      font-size: 14px;
+    }
+
+    @include media(laptop) {
+      height: 40px;
+    }
+
+     @include media(mobile) {
+      font-size: 12px;
+    }
+  }
+}
+
+.players-list {
+  @include flex($direction: column, $gap: $space-2, $align: stretch);
+  @include media(mobile) {
+    gap: 10px;
+  }
+  
+}

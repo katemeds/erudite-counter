@@ -1,0 +1,69 @@
+@use "../../../styles/mixins" as *;
+@use "../../../styles/variables" as *;
+
+.theme-toggler {
+  margin-left: auto;
+  position: relative;
+  width: 100px;
+  height: $space-4;
+  @include media(desktop) {
+    height: 40px;
+    width: 90px;
+  }
+  @include media(laptop) {
+    height: 30px;
+    width: 70px;
+  }
+  background-color: var(--theme-toggler-bg);
+  border: none;
+  border-radius: $radius-lg;
+  cursor: pointer;
+  transition: background-color var(--transition);
+  @include flex($justify: space-between);
+
+  &__icon {
+    width: 35px;
+    height: 35px;
+    @include media(desktop) {
+      width: 30px;
+      height: 30px;
+    }
+    @include media(laptop) {
+      width: 20px;
+      height: 20px;
+    }
+    @include flex;
+    color: var(--theme-toggler-icon);
+    transition: var(--transition);
+  }
+
+  &__thumb {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+
+    height: 44px;
+    width: 44px;
+    @include media(desktop) {
+      height: 34px;
+      width: 34px;
+    }
+    @include media(laptop) {
+      height: 24px;
+      width: 24px;
+    }
+    background-color: var(--theme-toggler-thumb);
+    border-radius: 50%;
+    z-index: 2;
+    transition:
+      right var(--transition),
+      background-color var(--transition);
+
+    &--dark {
+      right: 53px;
+      @include media(laptop) {
+        right: 43px;
+      }
+    }
+  }
+}
